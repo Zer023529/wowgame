@@ -39,10 +39,10 @@ position = Vector2( 1114, 658 )
 position = Vector2( 1367, 983 )
 
 [node name="box6" parent="levels_elements/boxes" instance=ExtResource( 5 )]
-position = Vector2( 2233, 659 )
+position = Vector2( 2235, 660 )
 
 [node name="box7" parent="levels_elements/boxes" instance=ExtResource( 5 )]
-position = Vector2( 1919, 658 )
+position = Vector2( 1922, 664 )
 
 [node name="platforms" type="Node2D" parent="levels_elements"]
 
@@ -89,16 +89,16 @@ position = Vector2( 2708, 1051 )
 position = Vector2( 2938, 1051 )
 
 [node name="platform15" parent="levels_elements/platforms" instance=ExtResource( 4 )]
-position = Vector2( 1992, 727 )
+position = Vector2( 1993, 730 )
 
 [node name="platform16" parent="levels_elements/platforms" instance=ExtResource( 4 )]
-position = Vector2( 2492, 729 )
+position = Vector2( 2492, 730 )
 
 [node name="platform17" parent="levels_elements/platforms" instance=ExtResource( 4 )]
-position = Vector2( 2223, 727 )
+position = Vector2( 2223, 730 )
 
 [node name="platform18" parent="levels_elements/platforms" instance=ExtResource( 4 )]
-position = Vector2( 2157, 408 )
+position = Vector2( 2157, 410 )
 
 [node name="ladders" type="Node2D" parent="levels_elements"]
 
@@ -109,7 +109,7 @@ position = Vector2( 913, 821 )
 position = Vector2( 2021, 500 )
 
 [node name="ladder2" parent="levels_elements/ladders" instance=ExtResource( 3 )]
-position = Vector2( 2357, 823 )
+position = Vector2( 2358, 821 )
 
 [node name="player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 338, 419 )
+position = Vector2( 341, 543 )

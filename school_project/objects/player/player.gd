@@ -124,7 +124,7 @@ func _on_Area2D_body_exited(body):
 
 func _on_Area2D_area_entered(area):		#Если игрок в области лесницы
 	
-	if area.name == 'ladder':
+	if area.get_child(0).name == 'w':
 		
 		on_ladder = true
 		was_jump = true
@@ -134,7 +134,7 @@ func _on_Area2D_area_entered(area):		#Если игрок в области ле
 
 func _on_Area2D_area_exited(area):		#Если игрок покидает область лесницы
 	
-	if area.name == 'ladder':
+	if area.get_child(0).name == 'w':
 		on_ladder = false
 		gravity_f = -500
 	
@@ -142,7 +142,7 @@ func _on_Area2D_area_exited(area):		#Если игрок покидает обл
 
 func _on_Area2D2_area_exited(area):		# Если игрок поднялся выше лестникы
 
-	if area.name == 'ladder':
+	if area.get_child(0).name == 'w':
 		
 		ladder_up = true
 		speed_left = 250
@@ -150,5 +150,5 @@ func _on_Area2D2_area_exited(area):		# Если игрок поднялся вы
 
 func _on_Area2D2_area_entered(area): 		# Если игрок вернулся 
 	
-	if area.name == 'ladder':
+	if area.get_child(0).name == 'w':
 		ladder_up = false
