@@ -6,7 +6,7 @@
 extents = Vector2( 20.5, 20 )
 
 [node name="box" type="StaticBody2D"]
-scale = Vector2( 2, 2 )
+scale = Vector2( 1.7, 1.7 )
 
 [node name="Pixil-frame-0(7)" type="Sprite" parent="."]
 texture = ExtResource( 1 )

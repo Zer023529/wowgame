@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://objects/player/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://objects/back_ground/Node2D.tscn" type="PackedScene" id=2]
@@ -6,6 +6,15 @@
 [ext_resource path="res://objects/platforms/platform.tscn" type="PackedScene" id=4]
 [ext_resource path="res://objects/box/box.tscn" type="PackedScene" id=5]
 [ext_resource path="res://l1.gd" type="Script" id=6]
+[ext_resource path="res://objects/bar/bar.tscn" type="PackedScene" id=7]
+[ext_resource path="res://objects/enventary/eventary.tscn" type="PackedScene" id=8]
+[ext_resource path="res://objects/mobs/mob.tscn" type="PackedScene" id=9]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 33.75, 457.25 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 8.5, 530.5 )
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 6 )
@@ -21,28 +30,46 @@ position = Vector2( -16, 6 )
 [node name="Node2D2" parent="levels_elements/BackGround" instance=ExtResource( 2 )]
 position = Vector2( 1531, 6 )
 
+[node name="start" type="Area2D" parent="levels_elements/BackGround"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="levels_elements/BackGround/start"]
+position = Vector2( 257, 644.25 )
+shape = SubResource( 1 )
+
+[node name="obs" type="Area2D" parent="levels_elements/BackGround"]
+
+[node name="obs" type="CollisionShape2D" parent="levels_elements/BackGround/obs"]
+position = Vector2( 624, 558 )
+shape = SubResource( 2 )
+
+[node name="obs2" type="Area2D" parent="levels_elements/BackGround"]
+
+[node name="obs" type="CollisionShape2D" parent="levels_elements/BackGround/obs2"]
+position = Vector2( 1657, 520 )
+shape = SubResource( 2 )
+
 [node name="boxes" type="Node2D" parent="levels_elements"]
 
-[node name="box" parent="levels_elements/boxes" instance=ExtResource( 5 )]
-position = Vector2( 460, 981 )
-
-[node name="box2" parent="levels_elements/boxes" instance=ExtResource( 5 )]
-position = Vector2( 537, 980 )
-
 [node name="box3" parent="levels_elements/boxes" instance=ExtResource( 5 )]
-position = Vector2( 502, 902 )
+position = Vector2( 496, 922 )
 
 [node name="box4" parent="levels_elements/boxes" instance=ExtResource( 5 )]
-position = Vector2( 1114, 658 )
+position = Vector2( 1123, 667 )
 
 [node name="box5" parent="levels_elements/boxes" instance=ExtResource( 5 )]
-position = Vector2( 1367, 983 )
+position = Vector2( 1370, 991 )
 
 [node name="box6" parent="levels_elements/boxes" instance=ExtResource( 5 )]
-position = Vector2( 2235, 660 )
+position = Vector2( 2231, 670 )
 
 [node name="box7" parent="levels_elements/boxes" instance=ExtResource( 5 )]
-position = Vector2( 1922, 664 )
+position = Vector2( 1912, 669 )
+
+[node name="box2" parent="levels_elements/boxes" instance=ExtResource( 5 )]
+position = Vector2( 525, 986 )
+
+[node name="box" parent="levels_elements/boxes" instance=ExtResource( 5 )]
+position = Vector2( 458, 987 )
 
 [node name="platforms" type="Node2D" parent="levels_elements"]
 
@@ -111,5 +138,17 @@ position = Vector2( 2021, 500 )
 [node name="ladder2" parent="levels_elements/ladders" instance=ExtResource( 3 )]
 position = Vector2( 2358, 821 )
 
+[node name="mobs" type="Node2D" parent="levels_elements"]
+
+[node name="mob" parent="levels_elements/mobs" instance=ExtResource( 9 )]
+position = Vector2( 1053, 947 )
+
 [node name="player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 341, 543 )
+position = Vector2( 720, 602 )
+
+[node name="bar" parent="." instance=ExtResource( 7 )]
+position = Vector2( 339, 49 )
+
+[node name="eventary" parent="." instance=ExtResource( 8 )]
+visible = false
+position = Vector2( -24, -22 )
