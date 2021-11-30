@@ -16,7 +16,7 @@ animations = [ {
 extents = Vector2( 10, 2 )
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 36.75, 10 )
+extents = Vector2( 46.375, 10 )
 
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 20.5, 18 )
@@ -34,7 +34,7 @@ shape = SubResource( 2 )
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2( -33.25, 5 )
+position = Vector2( -35, 5 )
 shape = SubResource( 3 )
 
 [node name="move_timer" type="Timer" parent="."]
@@ -43,7 +43,7 @@ shape = SubResource( 3 )
 
 [node name="Area2D2" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+[node name="mob" type="CollisionShape2D" parent="Area2D2"]
 position = Vector2( 0.5, 5 )
 shape = SubResource( 4 )
 

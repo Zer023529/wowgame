@@ -1,0 +1,196 @@
+[gd_scene load_steps=20 format=2]
+
+[ext_resource path="res://objects/enventary/sprites/pixil-frame-0 (8).png" type="Texture" id=1]
+[ext_resource path="res://objects/enventary/sprites/pixil-frame-0 (10).png" type="Texture" id=2]
+[ext_resource path="res://objects/notebook/sprites/pixil-frame-0 (8).png" type="Texture" id=3]
+[ext_resource path="res://objects/notebook/notebook.gd" type="Script" id=4]
+[ext_resource path="res://fonts/20930.ttf" type="DynamicFontData" id=5]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 20.25, 21.25 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 50
+font_data = ExtResource( 5 )
+
+[sub_resource type="Theme" id=3]
+default_font = SubResource( 2 )
+
+[sub_resource type="DynamicFontData" id=4]
+font_path = "res://fonts/20930.ttf"
+
+[sub_resource type="DynamicFont" id=5]
+size = 20
+font_data = SubResource( 4 )
+
+[sub_resource type="Theme" id=6]
+default_font = SubResource( 5 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 20
+font_data = ExtResource( 5 )
+
+[sub_resource type="Theme" id=8]
+default_font = SubResource( 7 )
+
+[sub_resource type="DynamicFont" id=9]
+size = 20
+font_data = ExtResource( 5 )
+
+[sub_resource type="Theme" id=10]
+default_font = SubResource( 9 )
+
+[sub_resource type="DynamicFont" id=11]
+size = 20
+font_data = ExtResource( 5 )
+
+[sub_resource type="Theme" id=12]
+default_font = SubResource( 11 )
+
+[sub_resource type="DynamicFont" id=13]
+size = 20
+font_data = ExtResource( 5 )
+
+[sub_resource type="Theme" id=14]
+default_font = SubResource( 13 )
+
+[node name="notebook" type="Node2D"]
+script = ExtResource( 4 )
+
+[node name="Pixil-frame-0(8)" type="Sprite" parent="."]
+position = Vector2( 959, 541 )
+scale = Vector2( 2.41143, 2.165 )
+texture = ExtResource( 3 )
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="Pixil-frame-0(10)" type="Sprite" parent="Area2D"]
+position = Vector2( 1728, 182 )
+scale = Vector2( 1.90571, 1.8825 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 1727.25, 181.75 )
+shape = SubResource( 1 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 198.0
+margin_top = 169.0
+margin_right = 843.0
+margin_bottom = 256.0
+theme = SubResource( 3 )
+text = "ИМЯ СУЩЕСТВИТЕЛЬНОЕ"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="r1" type="Node2D" parent="."]
+z_index = 2
+
+[node name="Pixil-frame-0(8)2" type="Sprite" parent="r1"]
+position = Vector2( 546, 329 )
+scale = Vector2( 36, 6 )
+texture = ExtResource( 1 )
+
+[node name="Label" type="Label" parent="r1"]
+margin_left = 200.0
+margin_top = 278.0
+margin_right = 905.0
+margin_bottom = 399.0
+theme = SubResource( 6 )
+text = "    Имя существительное обозначает предметы. 
+Отвечает на вопросы кто? что? (кого? чего? и т. д.)
+Примеры: стол, окно, липа, люди, счастье и др.
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="r2" type="Node2D" parent="."]
+
+[node name="Pixil-frame-0(8)2" type="Sprite" parent="r2"]
+position = Vector2( 546, 541.5 )
+scale = Vector2( 36, 11.85 )
+texture = ExtResource( 1 )
+
+[node name="Label" type="Label" parent="r2"]
+margin_left = 195.0
+margin_top = 427.0
+margin_right = 909.0
+margin_bottom = 656.0
+theme = SubResource( 8 )
+text = "    Существительные делятся на конкретные, отвлечённые, собирательные
+	и вещественные:
+	
+	    Конкретные называют предмты и явления. Такие существительные
+	имеют формы ед. и мн. числа.
+	
+	Примеры: кресло - кресла, дождь - дожди."
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="r3" type="Node2D" parent="."]
+
+[node name="Pixil-frame-0(8)2" type="Sprite" parent="r3"]
+position = Vector2( 546, 773 )
+scale = Vector2( 36, 8.2 )
+texture = ExtResource( 1 )
+
+[node name="Label" type="Label" parent="r3"]
+margin_left = 200.0
+margin_top = 701.0
+margin_right = 903.0
+margin_bottom = 833.0
+theme = SubResource( 10 )
+text = "    Отвлечённые называют действия, признаки, состояния и т. д. Как 
+	правило имею форму только ед. числа.
+	
+	Примеры: смех, синева, бег, дрожь."
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="r4" type="Node2D" parent="."]
+
+[node name="Pixil-frame-0(8)2" type="Sprite" parent="r4"]
+position = Vector2( 1343, 340.5 )
+scale = Vector2( 36.4, 6.85 )
+texture = ExtResource( 1 )
+
+[node name="Label" type="Label" parent="r4"]
+margin_left = 993.0
+margin_top = 278.0
+margin_right = 1685.0
+margin_bottom = 404.0
+theme = SubResource( 12 )
+text = "    Собирательные обозначают совокупность предметов или лиц как 
+единое целое.
+
+Примеры: молодёжь, листва."
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="r5" type="Node2D" parent="."]
+
+[node name="Pixil-frame-0(8)" type="Sprite" parent="r5"]
+position = Vector2( 1343, 507 )
+scale = Vector2( 36.4, 6.9 )
+texture = ExtResource( 1 )
+
+[node name="Label" type="Label" parent="r5"]
+margin_left = 992.0
+margin_top = 448.0
+margin_right = 1691.0
+margin_bottom = 566.0
+theme = SubResource( 14 )
+text = "    Вещественные обозначают вещество или однородную по составу массу.
+
+Примеры: горох, молоко, песок, железо."
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_Area2D_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_Area2D_mouse_exited"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://objects/player/player.gd" type="Script" id=1]
 [ext_resource path="res://objects/player/sprites/walk/pixil-frame-0 (2).png" type="Texture" id=2]
@@ -6,17 +6,23 @@
 [ext_resource path="res://objects/player/sprites/stay.png" type="Texture" id=4]
 [ext_resource path="res://objects/player/sprites/walk/pixil-frame-0.png" type="Texture" id=5]
 [ext_resource path="res://objects/enventary/sprites/pixil-frame-0 (9).png" type="Texture" id=6]
+[ext_resource path="res://objects/sword/sprites/pixil-frame-0 (12).png" type="Texture" id=7]
+[ext_resource path="res://objects/sword/sprites/pixil-frame-0 (9).png" type="Texture" id=8]
+[ext_resource path="res://objects/sword/sprites/pixil-frame-0 (8).png" type="Texture" id=9]
+[ext_resource path="res://objects/sword/sprites/pixil-frame-0 (13).png" type="Texture" id=10]
+[ext_resource path="res://objects/sword/sprites/pixil-frame-0 (14).png" type="Texture" id=11]
+[ext_resource path="res://objects/sword/sword.gd" type="Script" id=12]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 4 ) ],
-"loop": true,
-"name": "stay",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 5 ), ExtResource( 2 ), ExtResource( 3 ) ],
 "loop": true,
 "name": "walk",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "stay",
 "speed": 5.0
 } ]
 
@@ -28,6 +34,17 @@ extents = Vector2( 14.5, 57.5 )
 
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 18.5, 52.75 )
+
+[sub_resource type="SpriteFrames" id=5]
+animations = [ {
+"frames": [ ExtResource( 9 ), ExtResource( 8 ), ExtResource( 7 ), ExtResource( 10 ), ExtResource( 11 ) ],
+"loop": true,
+"name": "atack",
+"speed": 10.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 11.5, 46 )
 
 [node name="player" type="KinematicBody2D"]
 process_priority = 1
@@ -54,11 +71,27 @@ position = Vector2( -2, -1 )
 shape = SubResource( 4 )
 
 [node name="sword" type="Node2D" parent="."]
+script = ExtResource( 12 )
 
 [node name="sword_img" type="Sprite" parent="sword"]
 position = Vector2( 8, 11 )
 scale = Vector2( 1.85, 1.6 )
 texture = ExtResource( 6 )
+
+[node name="atack" type="AnimatedSprite" parent="sword"]
+position = Vector2( 30, 0 )
+frames = SubResource( 5 )
+animation = "atack"
+frame = 1
+
+[node name="Area2D" type="Area2D" parent="sword"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="sword/Area2D"]
+position = Vector2( 30, 8 )
+shape = SubResource( 6 )
+
+[node name="Timer" type="Timer" parent="sword"]
+wait_time = 0.4
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_Area2D_area_exited"]
@@ -66,3 +99,5 @@ texture = ExtResource( 6 )
 [connection signal="body_exited" from="Area2D" to="." method="_on_Area2D_body_exited"]
 [connection signal="area_entered" from="Area2D2" to="." method="_on_Area2D2_area_entered"]
 [connection signal="area_exited" from="Area2D2" to="." method="_on_Area2D2_area_exited"]
+[connection signal="area_entered" from="sword/Area2D" to="sword" method="_on_Area2D_area_entered"]
+[connection signal="timeout" from="sword/Timer" to="sword" method="_on_Timer_timeout"]

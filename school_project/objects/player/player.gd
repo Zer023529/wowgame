@@ -15,6 +15,8 @@ var on_ladder: bool = false
 var ladder_up: bool = false
 var ledder_bag: bool = false
 var event: bool = false
+var was_atacked: bool = false
+var mobs_colide: bool = false
 
 var in_hand = 'nothing'
 
@@ -51,6 +53,8 @@ func _physics_process(delta):
 			$sprite.flip_h = true
 			$sword/sword_img.flip_h = true
 			$sword/sword_img.position.x = -8
+			$sword/atack.flip_h = true
+			$sword/atack.position.x = -35
 			$Area2D/CollisionShape2D.position.x = -6
 			get_parent().get_child(0).position.x += speed_left * delta
 
@@ -60,6 +64,8 @@ func _physics_process(delta):
 			$sprite.flip_h = false
 			$sword/sword_img.flip_h = false
 			$sword/sword_img.position.x = 8
+			$sword/atack.flip_h = false
+			$sword/atack.position.x = 30
 			$Area2D/CollisionShape2D.position.x = 2
 			get_parent().get_child(0).position.x -= speed_right * delta
 			
@@ -99,8 +105,11 @@ func _physics_process(delta):
 				speed_right = 250
 				ledder_bag = false
 				
+		if mobs_colide and was_atacked:
+			damage()
+				
 		hand(in_hand)		
-			
+		
 		move_and_slide(Vector2(0,0))		# Это не перемещает игрока, необходимо для работы is_on_wall()
 			
 func jump():			# Функция прыжка
@@ -130,7 +139,29 @@ func hand(thing):
 	
 	if thing == 'sword':
 		$sword.show()
+		$sword.can_atack = true
+		
+func damage():
+	
+	was_atacked = false
+	if xp != 0:
+		
+		for _x in range(5):
+			hide()
+			yield(get_tree().create_timer(0.2), "timeout")
+			show()
+			yield(get_tree().create_timer(0.2), "timeout")
+	
+	else:
+		die()
+		
+	mobs_colide = false
 
+func die():
+	
+	get_parent().gg = true
+	queue_free()
+	
 func _on_Area2D_body_entered(body):		#Столкновение с объектами сбоку
 	
 	if body.name != 'player':
@@ -158,6 +189,26 @@ func _on_Area2D_area_entered(area):		#Если игрок в области ле
 		gravity_f = 0
 		
 		ladder_pos = area.position.x
+		
+	elif area.get_child(0).name == 'room':
+		
+		area.get_child(0).queue_free()
+		get_parent().room +=1
+		
+	elif area.get_child(0).name == 'l':
+		
+		speed_left = 0
+		$sprite.animation = 'stay'
+		
+	elif area.get_child(0).name == 'r':
+		
+		speed_right = 0
+		$sprite.animation = 'stay'
+		
+	elif area.get_child(0). name == 'heart':
+		
+		xp += 1
+		area.queue_free()
 
 func _on_Area2D_area_exited(area):		#Если игрок покидает область лесницы
 	
@@ -166,6 +217,12 @@ func _on_Area2D_area_exited(area):		#Если игрок покидает обл
 		gravity_f = -500
 	
 		was_jump = false
+		
+	elif area.get_child(0).name == 'l':
+		speed_left = 250
+		
+	elif area.get_child(0).name == 'r':
+		speed_right = 250
 
 func _on_Area2D2_area_exited(area):		# Если игрок поднялся выше лестникы
 

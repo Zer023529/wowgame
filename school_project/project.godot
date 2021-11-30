@@ -11,6 +11,7 @@ config_version=4
 [application]
 
 config/name="Новый Игровой Проект"
+boot_splash/image="res://pixil-frame-0 (8).png"
 config/icon="res://icon.png"
 
 [display]
@@ -19,6 +20,11 @@ window/size/width=1920
 window/size/height=1080
 window/size/fullscreen=true
 window/stretch/aspect="keep"
+
+[global]
+
+boot=false
+boot_splash=false
 
 [input]
 
@@ -89,6 +95,16 @@ enventory={
 mous_l={
 "deadzone": 0.5,
 "events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":1,"pressed":false,"doubleclick":false,"script":null)
+ ]
+}
+atack={
+"deadzone": 0.5,
+"events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":2,"pressed":false,"doubleclick":false,"script":null)
+ ]
+}
+test={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":70,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
  ]
 }
 
