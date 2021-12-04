@@ -1,0 +1,838 @@
+[gd_scene load_steps=29 format=2]
+
+[ext_resource path="res://objects/player/player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://objects/back_ground/Node2D.tscn" type="PackedScene" id=2]
+[ext_resource path="res://objects/ladder/ladder.tscn" type="PackedScene" id=3]
+[ext_resource path="res://objects/platforms/platform.tscn" type="PackedScene" id=4]
+[ext_resource path="res://objects/box/box.tscn" type="PackedScene" id=5]
+[ext_resource path="res://l1.gd" type="Script" id=6]
+[ext_resource path="res://objects/bar/bar.tscn" type="PackedScene" id=7]
+[ext_resource path="res://objects/enventary/eventary.tscn" type="PackedScene" id=8]
+[ext_resource path="res://objects/mobs/mob.tscn" type="PackedScene" id=9]
+[ext_resource path="res://objects/enother/pictures/pixil-frame-0 (9).png" type="Texture" id=10]
+[ext_resource path="res://objects/enother/pictures/pixil-frame-0 (12).png" type="Texture" id=11]
+[ext_resource path="res://objects/enother/pictures/pixil-frame-0 (8).png" type="Texture" id=12]
+[ext_resource path="res://objects/notebook/notebook.tscn" type="PackedScene" id=13]
+[ext_resource path="res://objects/bar/sprite/pixil-frame-0 (1).png" type="Texture" id=14]
+[ext_resource path="res://objects/tests/1l/test.tscn" type="PackedScene" id=15]
+[ext_resource path="res://fonts/20930.ttf" type="DynamicFontData" id=16]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 8.5, 530.5 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 10, 552.5 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 60.5, 358 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 11, 552 )
+
+[sub_resource type="SpriteFrames" id=6]
+animations = [ {
+"frames": [ ExtResource( 10 ), ExtResource( 11 ) ],
+"loop": true,
+"name": "default",
+"speed": 3.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 107.25, 108.75 )
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 22.5, 19.5 )
+
+[sub_resource type="DynamicFont" id=9]
+font_data = ExtResource( 16 )
+
+[sub_resource type="Theme" id=10]
+default_font = SubResource( 9 )
+
+[sub_resource type="RectangleShape2D" id=11]
+extents = Vector2( 442.5, 217.5 )
+
+[sub_resource type="RectangleShape2D" id=12]
+
+[sub_resource type="RectangleShape2D" id=13]
+extents = Vector2( 241.5, 13 )
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_horizontal_guides_": [  ],
+"_edit_vertical_guides_": [  ]
+}
+
+[node name="levels_elements" type="KinematicBody2D" parent="."]
+position = Vector2( -300, 0 )
+
+[node name="BackGround" type="Node2D" parent="levels_elements"]
+
+[node name="bg" parent="levels_elements/BackGround" instance=ExtResource( 2 )]
+
+[node name="bg2" parent="levels_elements/BackGround" instance=ExtResource( 2 )]
+position = Vector2( -1920, 0 )
+
+[node name="bg3" parent="levels_elements/BackGround" instance=ExtResource( 2 )]
+position = Vector2( 3840, 0 )
+
+[node name="bg4" parent="levels_elements/BackGround" instance=ExtResource( 2 )]
+position = Vector2( 1920, 0 )
+
+[node name="bg5" parent="levels_elements/BackGround" instance=ExtResource( 2 )]
+position = Vector2( 7680, 0 )
+
+[node name="bg6" parent="levels_elements/BackGround" instance=ExtResource( 2 )]
+position = Vector2( 5760, 0 )
+
+[node name="bg7" parent="levels_elements/BackGround" instance=ExtResource( 2 )]
+position = Vector2( 11520, 0 )
+
+[node name="bg8" parent="levels_elements/BackGround" instance=ExtResource( 2 )]
+position = Vector2( 9600, 0 )
+
+[node name="bg9" parent="levels_elements/BackGround" instance=ExtResource( 2 )]
+position = Vector2( 15360, 9 )
+
+[node name="bg10" parent="levels_elements/BackGround" instance=ExtResource( 2 )]
+position = Vector2( 13440, 9 )
+
+[node name="bg12" parent="levels_elements/BackGround" instance=ExtResource( 2 )]
+position = Vector2( 17280, 9 )
+
+[node name="boxes" type="Node2D" parent="levels_elements"]
+
+[node name="box3" parent="levels_elements/boxes" instance=ExtResource( 5 )]
+position = Vector2( 492, 925 )
+
+[node name="box4" parent="levels_elements/boxes" instance=ExtResource( 5 )]
+position = Vector2( 1123, 667 )
+
+[node name="box5" parent="levels_elements/boxes" instance=ExtResource( 5 )]
+position = Vector2( 1370, 991 )
+
+[node name="box6" parent="levels_elements/boxes" instance=ExtResource( 5 )]
+position = Vector2( 2231, 670 )
+
+[node name="box7" parent="levels_elements/boxes" instance=ExtResource( 5 )]
+position = Vector2( 1912, 669 )
+
+[node name="box2" parent="levels_elements/boxes" instance=ExtResource( 5 )]
+position = Vector2( 527, 988 )
+
+[node name="box" parent="levels_elements/boxes" instance=ExtResource( 5 )]
+position = Vector2( 463, 988 )
+
+[node name="box8" parent="levels_elements/boxes" instance=ExtResource( 5 )]
+position = Vector2( 3271, 663 )
+
+[node name="box9" parent="levels_elements/boxes" instance=ExtResource( 5 )]
+position = Vector2( 3796, 664 )
+
+[node name="box10" parent="levels_elements/boxes" instance=ExtResource( 5 )]
+position = Vector2( 5155, 664 )
+
+[node name="box11" parent="levels_elements/boxes" instance=ExtResource( 5 )]
+position = Vector2( 5265, 989 )
+
+[node name="box12" parent="levels_elements/boxes" instance=ExtResource( 5 )]
+position = Vector2( 6258, 987 )
+
+[node name="box13" parent="levels_elements/boxes" instance=ExtResource( 5 )]
+position = Vector2( 5651, 338 )
+
+[node name="box14" parent="levels_elements/boxes" instance=ExtResource( 5 )]
+position = Vector2( 6937, 989 )
+
+[node name="box15" parent="levels_elements/boxes" instance=ExtResource( 5 )]
+position = Vector2( 7001, 989 )
+
+[node name="box16" parent="levels_elements/boxes" instance=ExtResource( 5 )]
+position = Vector2( 7064, 989 )
+
+[node name="box17" parent="levels_elements/boxes" instance=ExtResource( 5 )]
+position = Vector2( 7033, 925 )
+
+[node name="box18" parent="levels_elements/boxes" instance=ExtResource( 5 )]
+position = Vector2( 8693, 664 )
+
+[node name="box19" parent="levels_elements/boxes" instance=ExtResource( 5 )]
+position = Vector2( 8757, 664 )
+
+[node name="box20" parent="levels_elements/boxes" instance=ExtResource( 5 )]
+position = Vector2( 8822, 664 )
+
+[node name="box21" parent="levels_elements/boxes" instance=ExtResource( 5 )]
+position = Vector2( 11761, 662 )
+
+[node name="box22" parent="levels_elements/boxes" instance=ExtResource( 5 )]
+position = Vector2( 11467, 990 )
+
+[node name="box23" parent="levels_elements/boxes" instance=ExtResource( 5 )]
+position = Vector2( 13175, 665 )
+
+[node name="platforms" type="Node2D" parent="levels_elements"]
+
+[node name="platform" parent="levels_elements/platforms" instance=ExtResource( 4 )]
+position = Vector2( 404, 1050 )
+
+[node name="platform2" parent="levels_elements/platforms" instance=ExtResource( 4 )]
+position = Vector2( 634, 1050 )
+
+[node name="platform3" parent="levels_elements/platforms" instance=ExtResource( 4 )]
+position = Vector2( 864, 1050 )
+
+[node name="platform4" parent="levels_elements/platforms" instance=ExtResource( 4 )]
+position = Vector2( 1094, 1050 )
+
+[node name="platform5" parent="levels_elements/platforms" instance=ExtResource( 4 )]
+position = Vector2( 1324, 1050 )
+
+[node name="platform6" parent="levels_elements/platforms" instance=ExtResource( 4 )]
+position = Vector2( 1554, 1050 )
+
+[node name="platform7" parent="levels_elements/platforms" instance=ExtResource( 4 )]
+position = Vector2( 778, 728 )
+
+[node name="platform8" parent="levels_elements/platforms" instance=ExtResource( 4 )]
+position = Vector2( 1045, 727 )
+
+[node name="platform9" parent="levels_elements/platforms" instance=ExtResource( 4 )]
+position = Vector2( 1785, 1050 )
+
+[node name="platform10" parent="levels_elements/platforms" instance=ExtResource( 4 )]
+position = Vector2( 2016, 1051 )
+
+[node name="platform11" parent="levels_elements/platforms" instance=ExtResource( 4 )]
+position = Vector2( 2248, 1051 )
+
+[node name="platform12" parent="levels_elements/platforms" instance=ExtResource( 4 )]
+position = Vector2( 2478, 1051 )
+
+[node name="platform13" parent="levels_elements/platforms" instance=ExtResource( 4 )]
+position = Vector2( 2708, 1051 )
+
+[node name="platform14" parent="levels_elements/platforms" instance=ExtResource( 4 )]
+position = Vector2( 2938, 1051 )
+
+[node name="platform15" parent="levels_elements/platforms" instance=ExtResource( 4 )]
+position = Vector2( 1993, 730 )
+
+[node name="platform16" parent="levels_elements/platforms" instance=ExtResource( 4 )]
+position = Vector2( 2492, 730 )
+
+[node name="platform17" parent="levels_elements/platforms" instance=ExtResource( 4 )]
+position = Vector2( 2223, 730 )
+
+[node name="platform18" parent="levels_elements/platforms" instance=ExtResource( 4 )]
+position = Vector2( 2157, 410 )
+
+[node name="platform19" parent="levels_elements/platforms" instance=ExtResource( 4 )]
+position = Vector2( 3169, 1051 )
+
+[node name="platform20" parent="levels_elements/platforms" instance=ExtResource( 4 )]
+position = Vector2( 3399, 1051 )
+
+[node name="platform21" parent="levels_elements/platforms" instance=ExtResource( 4 )]
+position = Vector2( 3629, 1051 )
+
+[node name="platform22" parent="levels_elements/platforms" instance=ExtResource( 4 )]
+position = Vector2( 3859, 1051 )
+
+[node name="platform23" parent="levels_elements/platforms" instance=ExtResource( 4 )]
+position = Vector2( 4089, 1051 )
+
+[node name="platform24" parent="levels_elements/platforms" instance=ExtResource( 4 )]
+position = Vector2( 4319, 1051 )
+
+[node name="platform25" parent="levels_elements/platforms" instance=ExtResource( 4 )]
+position = Vector2( 4551, 1051 )
+
+[node name="platform26" parent="levels_elements/platforms" instance=ExtResource( 4 )]
+position = Vector2( 4781, 1051 )
+
+[node name="platform27" parent="levels_elements/platforms" instance=ExtResource( 4 )]
+position = Vector2( 5011, 1051 )
+
+[node name="platform28" parent="levels_elements/platforms" instance=ExtResource( 4 )]
+position = Vector2( 5241, 1051 )
+
+[node name="platform29" parent="levels_elements/platforms" instance=ExtResource( 4 )]
+position = Vector2( 5471, 1051 )
+
+[node name="platform30" parent="levels_elements/platforms" instance=ExtResource( 4 )]
+position = Vector2( 5701, 1051 )
+
+[node name="platform31" parent="levels_elements/platforms" instance=ExtResource( 4 )]
+position = Vector2( 5932, 1051 )
+
+[node name="platform32" parent="levels_elements/platforms" instance=ExtResource( 4 )]
+position = Vector2( 6162, 1051 )
+
+[node name="platform33" parent="levels_elements/platforms" instance=ExtResource( 4 )]
+position = Vector2( 6392, 1051 )
+
+[node name="platform34" parent="levels_elements/platforms" instance=ExtResource( 4 )]
+position = Vector2( 6622, 1051 )
+
+[node name="platform35" parent="levels_elements/platforms" instance=ExtResource( 4 )]
+position = Vector2( 6854, 1051 )
+
+[node name="platform36" parent="levels_elements/platforms" instance=ExtResource( 4 )]
+position = Vector2( 7084, 1051 )
+
+[node name="platform37" parent="levels_elements/platforms" instance=ExtResource( 4 )]
+position = Vector2( 7314, 1051 )
+
+[node name="platform38" parent="levels_elements/platforms" instance=ExtResource( 4 )]
+position = Vector2( 7544, 1051 )
+
+[node name="platform39" parent="levels_elements/platforms" instance=ExtResource( 4 )]
+position = Vector2( 7774, 1051 )
+
+[node name="platform40" parent="levels_elements/platforms" instance=ExtResource( 4 )]
+position = Vector2( 8004, 1051 )
+
+[node name="platform41" parent="levels_elements/platforms" instance=ExtResource( 4 )]
+position = Vector2( 8236, 1051 )
+
+[node name="platform42" parent="levels_elements/platforms" instance=ExtResource( 4 )]
+position = Vector2( 8466, 1051 )
+
+[node name="platform43" parent="levels_elements/platforms" instance=ExtResource( 4 )]
+position = Vector2( 8696, 1051 )
+
+[node name="platform44" parent="levels_elements/platforms" instance=ExtResource( 4 )]
+position = Vector2( 8926, 1051 )
+
+[node name="platform45" parent="levels_elements/platforms" instance=ExtResource( 4 )]
+position = Vector2( 9158, 1051 )
+
+[node name="platform46" parent="levels_elements/platforms" instance=ExtResource( 4 )]
+position = Vector2( 9388, 1051 )
+
+[node name="platform47" parent="levels_elements/platforms" instance=ExtResource( 4 )]
+position = Vector2( 9616, 1051 )
+
+[node name="platform48" parent="levels_elements/platforms" instance=ExtResource( 4 )]
+position = Vector2( 9848, 1051 )
+
+[node name="platform49" parent="levels_elements/platforms" instance=ExtResource( 4 )]
+position = Vector2( 10078, 1051 )
+
+[node name="platform50" parent="levels_elements/platforms" instance=ExtResource( 4 )]
+position = Vector2( 10308, 1051 )
+
+[node name="platform51" parent="levels_elements/platforms" instance=ExtResource( 4 )]
+position = Vector2( 10539, 1051 )
+
+[node name="platform52" parent="levels_elements/platforms" instance=ExtResource( 4 )]
+position = Vector2( 10769, 1051 )
+
+[node name="platform53" parent="levels_elements/platforms" instance=ExtResource( 4 )]
+position = Vector2( 10999, 1051 )
+
+[node name="platform54" parent="levels_elements/platforms" instance=ExtResource( 4 )]
+position = Vector2( 11229, 1051 )
+
+[node name="platform55" parent="levels_elements/platforms" instance=ExtResource( 4 )]
+position = Vector2( 11461, 1051 )
+
+[node name="platform56" parent="levels_elements/platforms" instance=ExtResource( 4 )]
+position = Vector2( 11691, 1051 )
+
+[node name="platform57" parent="levels_elements/platforms" instance=ExtResource( 4 )]
+position = Vector2( 11919, 1051 )
+
+[node name="platform58" parent="levels_elements/platforms" instance=ExtResource( 4 )]
+position = Vector2( 12151, 1051 )
+
+[node name="platform59" parent="levels_elements/platforms" instance=ExtResource( 4 )]
+position = Vector2( 12381, 1051 )
+
+[node name="platform60" parent="levels_elements/platforms" instance=ExtResource( 4 )]
+position = Vector2( 12611, 1051 )
+
+[node name="platform61" parent="levels_elements/platforms" instance=ExtResource( 4 )]
+position = Vector2( 12841, 1051 )
+
+[node name="platform62" parent="levels_elements/platforms" instance=ExtResource( 4 )]
+position = Vector2( 13071, 1051 )
+
+[node name="platform63" parent="levels_elements/platforms" instance=ExtResource( 4 )]
+position = Vector2( 13301, 1051 )
+
+[node name="platform64" parent="levels_elements/platforms" instance=ExtResource( 4 )]
+position = Vector2( 13531, 1051 )
+
+[node name="platform65" parent="levels_elements/platforms" instance=ExtResource( 4 )]
+position = Vector2( 13763, 1051 )
+
+[node name="platform66" parent="levels_elements/platforms" instance=ExtResource( 4 )]
+position = Vector2( 13993, 1051 )
+
+[node name="platform67" parent="levels_elements/platforms" instance=ExtResource( 4 )]
+position = Vector2( 14221, 1051 )
+
+[node name="platform68" parent="levels_elements/platforms" instance=ExtResource( 4 )]
+position = Vector2( 14453, 1051 )
+
+[node name="platform69" parent="levels_elements/platforms" instance=ExtResource( 4 )]
+position = Vector2( 14683, 1051 )
+
+[node name="platform70" parent="levels_elements/platforms" instance=ExtResource( 4 )]
+position = Vector2( 14913, 1051 )
+
+[node name="platform71" parent="levels_elements/platforms" instance=ExtResource( 4 )]
+position = Vector2( 15144, 1052 )
+
+[node name="platform72" parent="levels_elements/platforms" instance=ExtResource( 4 )]
+position = Vector2( 15374, 1052 )
+
+[node name="platform73" parent="levels_elements/platforms" instance=ExtResource( 4 )]
+position = Vector2( 3010, 725 )
+
+[node name="platform74" parent="levels_elements/platforms" instance=ExtResource( 4 )]
+position = Vector2( 3277, 725 )
+
+[node name="platform75" parent="levels_elements/platforms" instance=ExtResource( 4 )]
+position = Vector2( 15604, 1052 )
+
+[node name="platform76" parent="levels_elements/platforms" instance=ExtResource( 4 )]
+position = Vector2( 15832, 1052 )
+
+[node name="platform77" parent="levels_elements/platforms" instance=ExtResource( 4 )]
+position = Vector2( 16064, 1052 )
+
+[node name="platform78" parent="levels_elements/platforms" instance=ExtResource( 4 )]
+position = Vector2( 16294, 1052 )
+
+[node name="platform79" parent="levels_elements/platforms" instance=ExtResource( 4 )]
+position = Vector2( 16524, 1052 )
+
+[node name="platform80" parent="levels_elements/platforms" instance=ExtResource( 4 )]
+position = Vector2( 16755, 1053 )
+
+[node name="platform81" parent="levels_elements/platforms" instance=ExtResource( 4 )]
+position = Vector2( 16985, 1053 )
+
+[node name="platform82" parent="levels_elements/platforms" instance=ExtResource( 4 )]
+position = Vector2( 3874, 726 )
+
+[node name="platform83" parent="levels_elements/platforms" instance=ExtResource( 4 )]
+position = Vector2( 5235, 726 )
+
+[node name="platform84" parent="levels_elements/platforms" instance=ExtResource( 4 )]
+position = Vector2( 5466, 726 )
+
+[node name="platform85" parent="levels_elements/platforms" instance=ExtResource( 4 )]
+position = Vector2( 5740, 727 )
+
+[node name="platform86" parent="levels_elements/platforms" instance=ExtResource( 4 )]
+position = Vector2( 5521, 400 )
+
+[node name="platform87" parent="levels_elements/platforms" instance=ExtResource( 4 )]
+position = Vector2( 5750, 400 )
+
+[node name="platform88" parent="levels_elements/platforms" instance=ExtResource( 4 )]
+position = Vector2( 5971, 727 )
+
+[node name="platform89" parent="levels_elements/platforms" instance=ExtResource( 4 )]
+position = Vector2( 8365, 725 )
+
+[node name="platform90" parent="levels_elements/platforms" instance=ExtResource( 4 )]
+position = Vector2( 8636, 726 )
+
+[node name="platform91" parent="levels_elements/platforms" instance=ExtResource( 4 )]
+position = Vector2( 8866, 726 )
+
+[node name="platform92" parent="levels_elements/platforms" instance=ExtResource( 4 )]
+position = Vector2( 11330, 724 )
+
+[node name="platform93" parent="levels_elements/platforms" instance=ExtResource( 4 )]
+position = Vector2( 11562, 724 )
+
+[node name="platform94" parent="levels_elements/platforms" instance=ExtResource( 4 )]
+position = Vector2( 11793, 724 )
+
+[node name="platform95" parent="levels_elements/platforms" instance=ExtResource( 4 )]
+position = Vector2( 12872, 726 )
+
+[node name="platform96" parent="levels_elements/platforms" instance=ExtResource( 4 )]
+position = Vector2( 13144, 727 )
+
+[node name="platform97" parent="levels_elements/platforms" instance=ExtResource( 4 )]
+position = Vector2( 14412, 724 )
+
+[node name="platform98" parent="levels_elements/platforms" instance=ExtResource( 4 )]
+position = Vector2( 14637, 394 )
+
+[node name="platform99" parent="levels_elements/platforms" instance=ExtResource( 4 )]
+position = Vector2( 14865, 718 )
+
+[node name="ladders" type="Node2D" parent="levels_elements"]
+
+[node name="ladder" parent="levels_elements/ladders" instance=ExtResource( 3 )]
+position = Vector2( 913, 821 )
+
+[node name="ladder3" parent="levels_elements/ladders" instance=ExtResource( 3 )]
+position = Vector2( 2021, 500 )
+
+[node name="ladder2" parent="levels_elements/ladders" instance=ExtResource( 3 )]
+position = Vector2( 2358, 821 )
+
+[node name="ladder4" parent="levels_elements/ladders" instance=ExtResource( 3 )]
+position = Vector2( 3143, 821 )
+
+[node name="ladder5" parent="levels_elements/ladders" instance=ExtResource( 3 )]
+position = Vector2( 4008, 820 )
+
+[node name="ladder6" parent="levels_elements/ladders" instance=ExtResource( 3 )]
+position = Vector2( 5603, 820 )
+
+[node name="ladder7" parent="levels_elements/ladders" instance=ExtResource( 3 )]
+position = Vector2( 5387, 498 )
+
+[node name="ladder8" parent="levels_elements/ladders" instance=ExtResource( 3 )]
+position = Vector2( 5885, 497 )
+
+[node name="ladder9" parent="levels_elements/ladders" instance=ExtResource( 3 )]
+position = Vector2( 8500, 821 )
+
+[node name="ladder10" parent="levels_elements/ladders" instance=ExtResource( 3 )]
+position = Vector2( 11194, 821 )
+
+[node name="ladder11" parent="levels_elements/ladders" instance=ExtResource( 3 )]
+position = Vector2( 11930, 822 )
+
+[node name="ladder12" parent="levels_elements/ladders" instance=ExtResource( 3 )]
+position = Vector2( 13007, 822 )
+
+[node name="ladder13" parent="levels_elements/ladders" instance=ExtResource( 3 )]
+position = Vector2( 14277, 820 )
+
+[node name="ladder14" parent="levels_elements/ladders" instance=ExtResource( 3 )]
+position = Vector2( 14500, 493 )
+
+[node name="ladder15" parent="levels_elements/ladders" instance=ExtResource( 3 )]
+position = Vector2( 14772, 489 )
+
+[node name="ladder16" parent="levels_elements/ladders" instance=ExtResource( 3 )]
+position = Vector2( 15000, 821 )
+
+[node name="mobs" type="Node2D" parent="levels_elements"]
+
+[node name="r1" type="Node2D" parent="levels_elements/mobs"]
+
+[node name="mob" parent="levels_elements/mobs/r1" instance=ExtResource( 9 )]
+position = Vector2( 2500, 636 )
+
+[node name="mob2" parent="levels_elements/mobs/r1" instance=ExtResource( 9 )]
+position = Vector2( 2223, 947 )
+
+[node name="mob3" parent="levels_elements/mobs/r1" instance=ExtResource( 9 )]
+position = Vector2( 3064, 634 )
+
+[node name="mob4" parent="levels_elements/mobs/r1" instance=ExtResource( 9 )]
+position = Vector2( 2554, 952 )
+
+[node name="r2" type="Node2D" parent="levels_elements/mobs"]
+
+[node name="mob" parent="levels_elements/mobs/r2" instance=ExtResource( 9 )]
+position = Vector2( 5521, 926 )
+
+[node name="mob2" parent="levels_elements/mobs/r2" instance=ExtResource( 9 )]
+position = Vector2( 6013, 938 )
+
+[node name="mob3" parent="levels_elements/mobs/r2" instance=ExtResource( 9 )]
+position = Vector2( 5801, 294 )
+
+[node name="mob4" parent="levels_elements/mobs/r2" instance=ExtResource( 9 )]
+position = Vector2( 5769, 644 )
+
+[node name="mob5" parent="levels_elements/mobs/r2" instance=ExtResource( 9 )]
+position = Vector2( 5337, 626 )
+
+[node name="r3" type="Node2D" parent="levels_elements/mobs"]
+
+[node name="mob" parent="levels_elements/mobs/r3" instance=ExtResource( 9 )]
+position = Vector2( 8969, 969 )
+
+[node name="mob2" parent="levels_elements/mobs/r3" instance=ExtResource( 9 )]
+position = Vector2( 8769, 576 )
+
+[node name="mob3" parent="levels_elements/mobs/r3" instance=ExtResource( 9 )]
+position = Vector2( 8389, 935 )
+
+[node name="r4" type="Node2D" parent="levels_elements/mobs"]
+
+[node name="mob" parent="levels_elements/mobs/r4" instance=ExtResource( 9 )]
+position = Vector2( 11302, 618 )
+
+[node name="mob2" parent="levels_elements/mobs/r4" instance=ExtResource( 9 )]
+position = Vector2( 12332, 938 )
+
+[node name="mob3" parent="levels_elements/mobs/r4" instance=ExtResource( 9 )]
+position = Vector2( 11786, 955 )
+
+[node name="mob4" parent="levels_elements/mobs/r4" instance=ExtResource( 9 )]
+position = Vector2( 11633, 615 )
+
+[node name="r5" type="Node2D" parent="levels_elements/mobs"]
+
+[node name="mob" parent="levels_elements/mobs/r5" instance=ExtResource( 9 )]
+position = Vector2( 14396, 632 )
+
+[node name="mob2" parent="levels_elements/mobs/r5" instance=ExtResource( 9 )]
+position = Vector2( 15339, 949 )
+
+[node name="mob3" parent="levels_elements/mobs/r5" instance=ExtResource( 9 )]
+position = Vector2( 14722, 284 )
+
+[node name="limitations" type="Node2D" parent="levels_elements"]
+
+[node name="room1" type="Node2D" parent="levels_elements/limitations"]
+
+[node name="obs2" type="Area2D" parent="levels_elements/limitations/room1"]
+
+[node name="obs" type="CollisionShape2D" parent="levels_elements/limitations/room1/obs2"]
+position = Vector2( 1473, 531 )
+shape = SubResource( 2 )
+
+[node name="obs3" type="Area2D" parent="levels_elements/limitations/room1"]
+
+[node name="obs" type="CollisionShape2D" parent="levels_elements/limitations/room1/obs3"]
+position = Vector2( 3604, 519 )
+shape = SubResource( 2 )
+
+[node name="room1_r" type="Area2D" parent="levels_elements/limitations/room1"]
+
+[node name="r" type="CollisionShape2D" parent="levels_elements/limitations/room1/room1_r"]
+position = Vector2( 3534, 516 )
+shape = SubResource( 5 )
+
+[node name="room1_l" type="Area2D" parent="levels_elements/limitations/room1"]
+
+[node name="room" type="CollisionShape2D" parent="levels_elements/limitations/room1/room1_l"]
+position = Vector2( 1784, 664 )
+shape = SubResource( 3 )
+
+[node name="l" type="CollisionShape2D" parent="levels_elements/limitations/room1/room1_l"]
+position = Vector2( 1541, 557 )
+shape = SubResource( 4 )
+
+[node name="room2" type="Node2D" parent="levels_elements/limitations"]
+position = Vector2( 3000, 0 )
+
+[node name="obs2" type="Area2D" parent="levels_elements/limitations/room2"]
+
+[node name="obs" type="CollisionShape2D" parent="levels_elements/limitations/room2/obs2"]
+position = Vector2( 1473, 531 )
+shape = SubResource( 2 )
+
+[node name="obs3" type="Area2D" parent="levels_elements/limitations/room2"]
+
+[node name="obs" type="CollisionShape2D" parent="levels_elements/limitations/room2/obs3"]
+position = Vector2( 3604, 519 )
+shape = SubResource( 2 )
+
+[node name="room1_r" type="Area2D" parent="levels_elements/limitations/room2"]
+
+[node name="r" type="CollisionShape2D" parent="levels_elements/limitations/room2/room1_r"]
+position = Vector2( 3534, 516 )
+shape = SubResource( 5 )
+
+[node name="room1_l" type="Area2D" parent="levels_elements/limitations/room2"]
+
+[node name="room" type="CollisionShape2D" parent="levels_elements/limitations/room2/room1_l"]
+position = Vector2( 1784, 664 )
+shape = SubResource( 3 )
+
+[node name="l" type="CollisionShape2D" parent="levels_elements/limitations/room2/room1_l"]
+position = Vector2( 1541, 557 )
+shape = SubResource( 4 )
+
+[node name="room3" type="Node2D" parent="levels_elements/limitations"]
+position = Vector2( 6000, 0 )
+
+[node name="obs2" type="Area2D" parent="levels_elements/limitations/room3"]
+
+[node name="obs" type="CollisionShape2D" parent="levels_elements/limitations/room3/obs2"]
+position = Vector2( 1473, 531 )
+shape = SubResource( 2 )
+
+[node name="obs3" type="Area2D" parent="levels_elements/limitations/room3"]
+
+[node name="obs" type="CollisionShape2D" parent="levels_elements/limitations/room3/obs3"]
+position = Vector2( 3604, 519 )
+shape = SubResource( 2 )
+
+[node name="room1_r" type="Area2D" parent="levels_elements/limitations/room3"]
+
+[node name="r" type="CollisionShape2D" parent="levels_elements/limitations/room3/room1_r"]
+position = Vector2( 3534, 516 )
+shape = SubResource( 5 )
+
+[node name="room1_l" type="Area2D" parent="levels_elements/limitations/room3"]
+
+[node name="room" type="CollisionShape2D" parent="levels_elements/limitations/room3/room1_l"]
+position = Vector2( 1784, 664 )
+shape = SubResource( 3 )
+
+[node name="l" type="CollisionShape2D" parent="levels_elements/limitations/room3/room1_l"]
+position = Vector2( 1541, 557 )
+shape = SubResource( 4 )
+
+[node name="room4" type="Node2D" parent="levels_elements/limitations"]
+position = Vector2( 9000, 0 )
+
+[node name="obs2" type="Area2D" parent="levels_elements/limitations/room4"]
+
+[node name="obs" type="CollisionShape2D" parent="levels_elements/limitations/room4/obs2"]
+position = Vector2( 1473, 531 )
+shape = SubResource( 2 )
+
+[node name="obs3" type="Area2D" parent="levels_elements/limitations/room4"]
+
+[node name="obs" type="CollisionShape2D" parent="levels_elements/limitations/room4/obs3"]
+position = Vector2( 3604, 519 )
+shape = SubResource( 2 )
+
+[node name="room1_r" type="Area2D" parent="levels_elements/limitations/room4"]
+
+[node name="r" type="CollisionShape2D" parent="levels_elements/limitations/room4/room1_r"]
+position = Vector2( 3534, 516 )
+shape = SubResource( 5 )
+
+[node name="room1_l" type="Area2D" parent="levels_elements/limitations/room4"]
+
+[node name="room" type="CollisionShape2D" parent="levels_elements/limitations/room4/room1_l"]
+position = Vector2( 1784, 664 )
+shape = SubResource( 3 )
+
+[node name="l" type="CollisionShape2D" parent="levels_elements/limitations/room4/room1_l"]
+position = Vector2( 1541, 557 )
+shape = SubResource( 4 )
+
+[node name="room5" type="Node2D" parent="levels_elements/limitations"]
+position = Vector2( 12000, 0 )
+
+[node name="obs2" type="Area2D" parent="levels_elements/limitations/room5"]
+
+[node name="obs" type="CollisionShape2D" parent="levels_elements/limitations/room5/obs2"]
+position = Vector2( 1473, 531 )
+shape = SubResource( 2 )
+
+[node name="obs3" type="Area2D" parent="levels_elements/limitations/room5"]
+
+[node name="obs" type="CollisionShape2D" parent="levels_elements/limitations/room5/obs3"]
+position = Vector2( 3604, 519 )
+shape = SubResource( 2 )
+
+[node name="room1_r" type="Area2D" parent="levels_elements/limitations/room5"]
+
+[node name="r" type="CollisionShape2D" parent="levels_elements/limitations/room5/room1_r"]
+position = Vector2( 3534, 516 )
+shape = SubResource( 5 )
+
+[node name="room1_l" type="Area2D" parent="levels_elements/limitations/room5"]
+
+[node name="room" type="CollisionShape2D" parent="levels_elements/limitations/room5/room1_l"]
+position = Vector2( 1784, 664 )
+shape = SubResource( 3 )
+
+[node name="l" type="CollisionShape2D" parent="levels_elements/limitations/room5/room1_l"]
+position = Vector2( 1541, 557 )
+shape = SubResource( 4 )
+
+[node name="Pixil-frame-0(8)" type="Sprite" parent="levels_elements"]
+position = Vector2( 16376, 912 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 12 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="levels_elements"]
+position = Vector2( 16154, 965 )
+frames = SubResource( 6 )
+frame = 1
+playing = true
+flip_h = true
+
+[node name="Area2D" type="Area2D" parent="levels_elements"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="levels_elements/Area2D"]
+position = Vector2( 16378.3, 915.25 )
+shape = SubResource( 7 )
+
+[node name="Area2D2" type="Area2D" parent="levels_elements"]
+
+[node name="heart" type="CollisionShape2D" parent="levels_elements/Area2D2"]
+position = Vector2( 5652.5, 264 )
+shape = SubResource( 8 )
+
+[node name="Pixil-frame-0(1)" type="Sprite" parent="levels_elements/Area2D2"]
+position = Vector2( 5651, 266 )
+texture = ExtResource( 14 )
+
+[node name="Area2D3" type="Area2D" parent="levels_elements"]
+position = Vector2( 100, 0 )
+
+[node name="heart" type="CollisionShape2D" parent="levels_elements/Area2D3"]
+position = Vector2( 10000, 900 )
+shape = SubResource( 8 )
+
+[node name="Pixil-frame-0(1)" type="Sprite" parent="levels_elements/Area2D3"]
+position = Vector2( 10000, 900 )
+texture = ExtResource( 14 )
+
+[node name="Label" type="Label" parent="levels_elements"]
+margin_left = 15958.0
+margin_top = 855.0
+margin_right = 16256.0
+margin_bottom = 897.0
+theme = SubResource( 10 )
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Area2D4" type="Area2D" parent="levels_elements"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="levels_elements/Area2D4"]
+position = Vector2( 16280, 810 )
+shape = SubResource( 11 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="levels_elements"]
+shape = SubResource( 12 )
+
+[node name="die" type="Area2D" parent="levels_elements"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="levels_elements/die"]
+position = Vector2( 90, 1113 )
+shape = SubResource( 13 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="levels_elements/die"]
+position = Vector2( 17335, 1143 )
+shape = SubResource( 13 )
+
+[node name="player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 720, 602 )
+
+[node name="bar" parent="." instance=ExtResource( 7 )]
+position = Vector2( 339, 49 )
+
+[node name="eventary" parent="." instance=ExtResource( 8 )]
+visible = false
+position = Vector2( -24, -22 )
+
+[node name="notebook" parent="." instance=ExtResource( 13 )]
+visible = false
+position = Vector2( -37, -17 )
+
+[node name="test" parent="." instance=ExtResource( 15 )]
+visible = false
+position = Vector2( -51, -15 )
+
+[connection signal="body_entered" from="levels_elements/Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="levels_elements/Area2D4" to="." method="_on_Area2D4_body_entered"]
+[connection signal="body_exited" from="levels_elements/Area2D4" to="." method="_on_Area2D4_body_exited"]
